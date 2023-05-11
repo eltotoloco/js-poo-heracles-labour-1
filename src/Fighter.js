@@ -12,7 +12,15 @@ class Fighter{
 
     fight(defender){
         const damage = Math.round(Math.random()*this.strength);
-return console.log(damage)
+        const diff = damage - defender.dexterity;
+
+        let defendDodge = 0;
+        diff < 0 ? defendDodge = 0 : defendDodge = diff;
+
+        let newLife = defender.life - defendDodge;
+        newLife < 0 ? defender.life = 0 : defender.life = newLife;
+
+        return console.log(damage)
     }
 }
 
