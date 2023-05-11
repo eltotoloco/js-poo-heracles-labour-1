@@ -8,26 +8,30 @@
 
 
 
-const Fighter = require("./src/Fighter");
 
-const heracles = new Fighter("🧔Heracles", 20, 6, 100);
+const Fighter = require('./src/Fighter.js');
+let Heracles = new Fighter("👨 Heracles", 20, 6)
+let Lion = new Fighter("🦁 Nemean Lion", 11, 13)
 
-const nemeanLion = new Fighter("🦁Nemean Lion", 11, 13, 100);
 
-let round = 1;
+function fight(fighter1, fighter2){
+    let roundNumber = 1
+    while(fighter1.isAlive() && fighter2.isAlive()){
+        fighter1.fight(fighter2)
+        fighter2.fight(fighter1)
+        console.log(`⌛ Round #${roundNumber}`)
+        console.log(`${fighter1.Name} 🗡️ ${fighter2.Name} 💙 ${fighter2.Name}: ${fighter2.Life}`)
+        if (fighter2.isAlive()){
+            console.log(`${fighter2.Name} 🗡️ ${fighter1.Name} 💙 ${fighter1.Name}: ${fighter1.Life}`)
+        }
+        roundNumber ++
+    }
+    if (fighter1.isAlive() ){
+        console.log(`${fighter1.Name} won the fight, ${fighter2.Name} was defeated`)
+    }
+    if (fighter2.isAlive()){
+        console.log(`${fighter2.Name} won the fight, ${fighter1.Name} was defeated`)
+    }
+}
 
-while (heracles.health > 0 && nemeanLion.health > 0) {
-    console.log(`Round ${round}:`);
-    heracles.fight(lion);
-    lion.fight(heracles);
-    console.log("");
-    round++;
-  }
-  
-  if (heracles.health > 0) {
-    console.log(`${heracles.name} a vaincu ${nemeanLion.name} ! 🏆`);
-    console.log(`${nemeanLion.name} est mort 💀`);
-  } else {
-    console.log(`${nemeanLion.name} a vaincu ${heracles.name} ! 🏆`);
-    console.log(`${heracles.name} est mort 💀`);
-  }
+fight(Heracles, Lion)
