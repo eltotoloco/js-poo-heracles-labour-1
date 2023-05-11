@@ -22,6 +22,10 @@ class Fighter{
 
         return console.log(damage)
     }
+
+    isAlive(){
+        return this.life > 0 ? true : false ;
+    }
 }
 
 module.exports = Fighter;

@@ -5,10 +5,11 @@ const Fighter = require('./src/Fighter');
 
 const Heracles = new Fighter('Heracles', 20, 6);
 const Nemean = new Fighter('Nemean', 11, 13);
+
 let round = 1
 
-while(Heracles.life >0 && Nemean.life >0){
-    console.log(`It is the ${round} round.`)
+do {
+    console.log(`It is the round ${round}.`)
 
     Heracles.fight(Nemean);
     console.log(`${Heracles.name} attack ${Nemean.name} ! `)
@@ -21,6 +22,10 @@ while(Heracles.life >0 && Nemean.life >0){
 
     round++;
 }
+    while(Heracles.isAlive() && Nemean.isAlive()){
+}
 
 
-console.log(Heracles.life > 0 ? `Heracles wins !! Nemean is dead !` : `The Winner is : Nem... oh noo, Heracles wins anyway cause he is Heracles !! Nemean defeated anywaaaay !`)
+console.log(Heracles.isAlive()
+  ? `Heracles wins! ${Nemean.name} is defeated!`
+  : `The winner is: ${Nemean.name}... Oh no, Heracles wins anyway because he is Heracles! ${Nemean.name} is defeated anyway!`);
