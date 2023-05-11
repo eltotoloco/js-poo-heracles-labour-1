@@ -1,8 +1,7 @@
 
 const Fighter = require('./src/Fighter.js');
-const Max_Life = 100
-let Heracles = new Fighter("👨 Heracles", Max_Life, 20, 6)
-let Lion = new Fighter("🦁 Nemean Lion", Max_Life, 11, 13)
+let Heracles = new Fighter("👨 Heracles", 20, 6)
+let Lion = new Fighter("🦁 Nemean Lion", 11, 13)
 
 
 function fightToDeath(fighter1, fighter2){

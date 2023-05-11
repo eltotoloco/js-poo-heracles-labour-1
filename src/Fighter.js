@@ -1,8 +1,9 @@
+const Max_Life = 100
 
 class Fighter {
-    constructor(Name, Life, Strength, Dex){
+    constructor(Name, Strength, Dex){
     this.Name = Name
-    this.Life = Life
+    this.Life = Max_Life
     this.Strength = Strength
     this.Dex = Dex
     }
@@ -19,7 +20,7 @@ fight(defender){
 }
 }
 isAlive(){
-    while(this.Life > 0){
+    if(this.Life > 0){
     return true}
 }
 }
