@@ -9,6 +9,11 @@ class Fighter{
         this.life = maxLife;
 
     }
+
+    fight(defender){
+        const damage = Math.round(Math.random()*this.strength);
+return console.log(damage)
+    }
 }
 
 module.exports = Fighter;

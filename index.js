@@ -9,3 +9,4 @@ const Nemean = new Fighter('Nemean', 11, 13);
 
 console.log(`1st Hero : ${Heracles.name}, ${Heracles.life} PV.`)
 console.log(`2nd Hero : ${Nemean.name}, ${Nemean.life} PV.`)
+console.log(Heracles.fight())
