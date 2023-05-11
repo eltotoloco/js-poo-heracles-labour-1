@@ -3,29 +3,29 @@
 const Fighter = require('./src/Fighter');
 
 
-const Heracles = new Fighter('Heracles', 20, 6);
-const Nemean = new Fighter('Nemean', 11, 13);
+const fighter1 = new Fighter('Heracles', 20, 6);
+const fighter2 = new Fighter('Nemean', 11, 13);
 
 let round = 1
 
 do {
     console.log(`It is the round ${round}.`)
 
-    Heracles.fight(Nemean);
-    console.log(`${Heracles.name} attack ${Nemean.name} ! `)
-    console.log(`LIFE : ${Heracles.name}, ${Heracles.life} PV. ${Nemean.name}, ${Nemean.life} PV.`)
+    fighter1.fight(fighter2);
+    console.log(`🧔${fighter1.name} 🗡️attack 🦁${fighter2.name} ! `)
+    console.log(`LIFE : 🧔${fighter1.name}, ${fighter1.life} PV💙. 🦁${fighter2.name}, ${fighter2.life} PV💙.`)
 
 
-    Nemean.fight(Heracles);
-    console.log(`${Nemean.name} attack ${Heracles.name} ! `)
-    console.log(`LIFE : ${Heracles.name}, ${Heracles.life} PV. ${Nemean.name}, ${Nemean.life} PV.`)
+    fighter2.fight(fighter1);
+    console.log(`🦁${fighter2.name} 🗡️attack 🧔${fighter1.name} ! `)
+    console.log(`LIFE : 🦁${fighter2.name}, ${fighter2.life} PV💙. 🧔${fighter1.name}, ${fighter1.life} PV💙.`)
 
     round++;
 }
-    while(Heracles.isAlive() && Nemean.isAlive()){
+    while(fighter1.isAlive() && fighter2.isAlive()){
 }
 
 
-console.log(Heracles.isAlive()
-  ? `Heracles wins! ${Nemean.name} is defeated!`
-  : `The winner is: ${Nemean.name}... Oh no, Heracles wins anyway because he is Heracles! ${Nemean.name} is defeated anyway!`);
+console.log(fighter1.isAlive()
+  ? `🧔${fighter1.name} 🏆wins ! 🦁${fighter2.name} is defeated!💀`
+  : `The winner is: 🦁${fighter2.name}... Oh no, 🧔${fighter1.name} wins anyway because he is 🧔${fighter1.name}! 🦁${fighter2.name} is defeated anyway!💀`);
